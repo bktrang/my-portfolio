@@ -4,20 +4,29 @@
 .intro {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 40px;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 /* Profile Image */
+.intro-image {
+    flex: 0 0 auto;
+}
+
 .intro-image img {
     width: 250px;
-    max-width: 100%;
+    height: auto;
+    display: block;
     border-radius: 8px;
-    object-fit: cover;
 }
 
 /* Text Area */
-.intro-text h2 {
-    margin-top: 0;
+.intro p {
+    flex: 1;
+    margin: 0;
 }
 
 
