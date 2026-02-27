@@ -1,120 +1,10 @@
-/* ------------------------------
-   Intro Section (Profile Layout)
--------------------------------- */
-.intro {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    padding: 40px;
-    max-width: 1000px;
-    margin: 0 auto;
+/* ==============================
+   Global Styles
+================================ */
+* {
+  box-sizing: border-box;
 }
 
-/* Profile Image */
-.intro-image {
-    flex: 0 0 auto;
-}
-
-.intro-image img {
-    width: 250px;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-}
-
-/* Text Area */
-.intro-text {
-    flex: 1;
-    margin: 0;
-}
-
-
-.work-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.work-card {
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 30px;
-    padding: 25px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background-color: #fafafa;
-    align-items: start;
-}
-
-/* ------------------------------
-   Work Sample Image Consistency
--------------------------------- */
-.work-image {
-    width: 260px;
-    height: 200px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background-color: none;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-}
-
-.work-image img {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
-}
-
-
-/* Text Column */
-.work-content {
-    text-align: left;
-}
-
-.work-content h3 {
-    margin-top: 0;
-}
-
-.work-content p {
-    margin-left: 0;
-}
-
-/* ------------------------------
-   Responsive (Mobile)
--------------------------------- */
-@media (max-width: 768px) {
-    .work-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .work-image img {
-        width: 100%;
-        height: auto;
-    }
-}
-
-
-/* ------------------------------
-   Responsive Layout
--------------------------------- */
-@media (max-width: 768px) {
-    .intro {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .intro-image img {
-        width: 200px;
-    }
-}
-
-/* Global Styles */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -123,15 +13,19 @@ body {
   line-height: 1.6;
 }
 
-/* Header */
+/* ==============================
+   Header
+================================ */
 header {
-  background-color: #2c3e50; /* dark blue/charcoal */
+  background-color: #2c3e50;
   color: #ffffff;
   padding: 30px 20px;
   text-align: center;
 }
 
-/* Navigation */
+/* ==============================
+   Navigation
+================================ */
 nav {
   background-color: #34495e;
 }
@@ -142,6 +36,7 @@ nav ul {
   padding: 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; /* prevents overflow */
 }
 
 nav ul li {
@@ -159,16 +54,18 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Main Content */
+/* ==============================
+   Main Content
+================================ */
 main {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 30px auto;
-  padding: 0 20px;
+  padding: 20px;
   background-color: #ffffff;
 }
 
 section {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 h2 {
@@ -177,10 +74,156 @@ h2 {
   padding-bottom: 5px;
 }
 
-/* Footer */
+/* ==============================
+   Intro Section (Profile Layout)
+================================ */
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.intro-image img {
+  width: 250px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.intro-text {
+  flex: 1;
+}
+
+/* ==============================
+   Work Grid Section
+================================ */
+.work-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.work-card {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 30px;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fafafa;
+  align-items: start;
+}
+
+/* Work Image Container */
+.work-image {
+  width: 100%;
+  max-width: 260px;
+  height: 200px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.work-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Text Column */
+.work-content h3 {
+  margin-top: 0;
+}
+
+/* ==============================
+   Resume Button (If Used)
+================================ */
+.download-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background-color: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.download-btn:hover {
+  background-color: #1a252f;
+}
+
+/* ==============================
+   Footer
+================================ */
 footer {
   text-align: center;
   padding: 20px;
   background-color: #2c3e50;
   color: #ffffff;
+  margin-top: 40px;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+================================ */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .work-card {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .intro-image img {
+    width: 220px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  /* Stack intro vertically */
+  .intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-image img {
+    width: 180px;
+  }
+
+  /* Stack project cards */
+  .work-card {
+    grid-template-columns: 1fr;
+  }
+
+  .work-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .work-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Stack navigation vertically */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  main {
+    padding: 15px;
+  }
 }
